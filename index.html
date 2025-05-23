@@ -6,97 +6,286 @@
   <title>Projeto Agrinho - Comércio Justo</title>
   <meta name="description" content="Site sobre comércio justo e a importância da conexão campo-cidade - Projeto Agrinho por Pietro">
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #8FBC8F, #FAF7F2);
-      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #2F4F2F;
+      background: #FAF7F2;
+    }
+    
+    .hero {
+      background: linear-gradient(rgba(47, 79, 47, 0.7), rgba(47, 79, 47, 0.7)), 
+                  url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080') center/cover;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    .container {
       text-align: center;
-      background: white;
-      padding: 3rem;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      max-width: 600px;
-      margin: 2rem;
+      color: white;
     }
-    h1 {
-      color: #2F4F2F;
-      font-size: 2.5rem;
+    
+    .hero-content h1 {
+      font-size: 4rem;
       margin-bottom: 1rem;
+      font-weight: bold;
     }
-    p {
-      color: #6B7280;
-      font-size: 1.2rem;
-      line-height: 1.6;
+    
+    .hero-content p {
+      font-size: 1.5rem;
       margin-bottom: 2rem;
+      max-width: 800px;
     }
-    .leaf {
+    
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h2 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #2F4F2F;
+    }
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    
+    .principle {
+      text-align: center;
+      padding: 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .principle-icon {
       font-size: 3rem;
       margin-bottom: 1rem;
     }
-    .tech-note {
-      background: #f0f9ff;
-      border: 1px solid #7dd3fc;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-    .tech-note h3 {
-      color: #0369a1;
-      margin-top: 0;
-    }
-    .tech-note p {
-      color: #075985;
-      font-size: 1rem;
-      margin-bottom: 0;
-    }
-    .credit {
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 2px solid #8FBC8F;
-    }
-    .credit h2 {
-      color: #8FBC8F;
+    
+    .principle h3 {
+      color: #2F4F2F;
+      margin-bottom: 1rem;
       font-size: 1.5rem;
+    }
+    
+    .gallery {
+      background: #FAF7F2;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .gallery-item {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-10px);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .impact {
+      background: #8FBC8F;
+      color: white;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .stat {
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .stat-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      background: rgba(255,255,255,0.2);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    
+    .stat-value {
+      font-size: 3rem;
+      font-weight: bold;
       margin-bottom: 0.5rem;
     }
-    .credit p {
-      color: #2F4F2F;
-      font-weight: bold;
-      font-size: 1.1rem;
+    
+    .footer {
+      background: #2F4F2F;
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+    
+    .footer h2 {
+      color: #8FBC8F;
+      margin-bottom: 1rem;
+    }
+    
+    .footer p {
+      margin-bottom: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .section {
+        padding: 3rem 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="leaf">🌱</div>
-    <h1>Comércio Justo</h1>
-    <p>
-      Este é um site dinâmico sobre comércio justo e a importância da conexão campo-cidade, 
-      desenvolvido com React, animações suaves e design responsivo.
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Comércio Justo</h1>
+      <p>Construindo pontes sustentáveis entre o campo e a cidade através de práticas comerciais éticas</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section">
+    <h2>O Que é Comércio Justo?</h2>
+    <p style="text-align: center; font-size: 1.3rem; color: #6B7280; max-width: 800px; margin: 0 auto;">
+      Uma abordagem comercial que garante condições justas para produtores e trabalhadores, 
+      promovendo sustentabilidade ambiental e desenvolvimento comunitário.
     </p>
     
-    <div class="tech-note">
-      <h3>🚀 Site React em Desenvolvimento</h3>
-      <p>
-        Este projeto usa React + TypeScript e precisa ser compilado para funcionar no GitHub Pages. 
-        O código fonte completo está disponível nos arquivos do repositório.
-        <br><br>
-        Para ver o site funcionando, você pode baixar o projeto e executar localmente 
-        com os comandos: <code>npm install</code> e <code>npm run dev</code>
-      </p>
+    <div class="about-grid">
+      <div class="principle">
+        <div class="principle-icon">❤️</div>
+        <h3>Preços Justos</h3>
+        <p>Garantindo remuneração adequada que cobre custos de produção sustentável.</p>
+      </div>
+      
+      <div class="principle">
+        <div class="principle-icon">👥</div>
+        <h3>Condições Dignas</h3>
+        <p>Promovendo ambientes de trabalho seguros e respeitosos para todos.</p>
+      </div>
+      
+      <div class="principle">
+        <div class="principle-icon">🌱</div>
+        <h3>Sustentabilidade</h3>
+        <p>Práticas agrícolas que preservam o meio ambiente para futuras gerações.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="credit">
-      <h2>Projeto Agrinho</h2>
-      <p>by Pietro</p>
+  <!-- Gallery Section -->
+  <section class="section gallery">
+    <h2>Comércio Justo em Ação</h2>
+    <p style="text-align: center; font-size: 1.3rem; color: #6B7280; max-width: 800px; margin: 0 auto;">
+      Veja como práticas de comércio justo transformam vidas e comunidades ao redor do mundo.
+    </p>
+    
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Agricultores de café">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Mercado de vegetais">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Produtos orgânicos">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Mercado urbano">
+      </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="section impact">
+    <h2>Impacto Real</h2>
+    <p style="text-align: center; font-size: 1.3rem; margin-bottom: 3rem; max-width: 800px; margin: 0 auto 3rem;">
+      Números que demonstram como o comércio justo está transformando vidas e comunidades.
+    </p>
+    
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-icon">👥</div>
+        <div class="stat-value">2.5M+</div>
+        <div>Produtores Beneficiados</div>
+      </div>
+      
+      <div class="stat">
+        <div class="stat-icon">🌍</div>
+        <div class="stat-value">75+</div>
+        <div>Países Participantes</div>
+      </div>
+      
+      <div class="stat">
+        <div class="stat-icon">🌱</div>
+        <div class="stat-value">1.8M</div>
+        <div>Hectares Certificados</div>
+      </div>
+      
+      <div class="stat">
+        <div class="stat-icon">💰</div>
+        <div class="stat-value">$213M</div>
+        <div>Prêmio de Desenvolvimento</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+      <span style="font-size: 2rem; margin-right: 1rem;">🌱</span>
+      <h2 style="margin: 0;">Comércio Justo</h2>
+    </div>
+    <p>Conectando produtores e consumidores através de práticas comerciais éticas e sustentáveis.</p>
+    <br>
+    <h2>Projeto Agrinho</h2>
+    <p><strong>by Pietro</strong></p>
+    <p style="margin-top: 2rem; color: rgba(255,255,255,0.7);">&copy; 2024 Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
